@@ -1,5 +1,4 @@
-VERSION = $(shell git describe --tags)
-
+VERSION = "edge";
 .PHONY: all clean install uninstall
 
 all: nexusd
