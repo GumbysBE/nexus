@@ -1,4 +1,4 @@
-FROM golang:1.15-alpine3.14
+FROM balenalib/raspberrypi3-64-alpine-golang:1.15-3.14-run
 
 WORKDIR /opt/nexus
 
@@ -11,5 +11,3 @@ RUN set -ex \
     && make service install \
     && mkdir -p /run/nexus/ \
     && apk del --no-network .build-deps
-
-CMD ["/go/bin/nexusd", "-unix", "/run/nexus/socket", "-ws", "0.0.0.0:80", "-realm", "mbl-service-realm"]
